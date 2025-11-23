@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Ticket extends Model
+class Ticket extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
         'customer_id',
@@ -16,6 +18,10 @@ class Ticket extends Model
         'text',
         'status',
         'manager_reply_at',
+    ];
+
+    protected $casts = [
+        'manager_reply_at' => 'datetime',
     ];
 
     public function customer(): BelongsTo
