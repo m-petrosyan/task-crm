@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout auth>
     <form method="POST" action="{{ route('login.post') }}" class="bg-white  px-6 py-4">
         @csrf
 
