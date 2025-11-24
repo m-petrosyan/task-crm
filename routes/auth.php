@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'role:manager|admin'])->prefix('dashboard')->group(function () {
     Route::get('/', [TicketController::class, 'index'])->name('dashboard');
-
+    Route::get('/tickets/{ticket}', [TicketController::class, 'show'])->name('tickets.show');
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
 });

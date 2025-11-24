@@ -92,7 +92,8 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-gray-400">{{ $ticket->created_at->format('Y-m-d H:i') }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-
+                                        <a href="{{ route('tickets.show',$ticket->id) }}"
+                                           class="text-indigo-400 hover:text-indigo-600">View</a>
                                     </td>
                                 </tr>
                             @endforeach

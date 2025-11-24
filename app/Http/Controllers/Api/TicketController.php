@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Ticket\TicketCreateRequest;
+use App\Models\Ticket;
 use App\Repositories\TicketRepository;
 use App\Services\TicketService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class TicketController extends Controller
 {
@@ -23,6 +25,12 @@ class TicketController extends Controller
 
         return view('dashboard.index', compact('tickets'));
     }
+
+    public function show(Ticket $ticket): View
+    {
+        return view('dashboard.show', compact('ticket'));
+    }
+
 
     public function store(TicketCreateRequest $request): Response
     {
