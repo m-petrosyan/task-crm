@@ -4,7 +4,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
+Route::middleware(['auth', 'role:manager|admin'])->prefix('dashboard')->group(function () {
     Route::get('/', function () {
         return view('auth.dashboard');
     })->name('dashboard');
@@ -13,15 +13,15 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () 
         ->name('logout');
 });
 
-
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 
-    Route::get('login', [AuthenticatedSessionController::class, 'create'])
+    Route::get('/', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
 
-    Route::post('login', [AuthenticatedSessionController::class, 'store']);
+    Route::post('login', [AuthenticatedSessionController::class, 'store'])
+        ->name('login.post');
 });

@@ -1,9 +1,10 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WidgetController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', HomeController::class);
+Route::get('widget', [WidgetController::class, 'create']);
 
 
 require __DIR__.'/auth.php';
