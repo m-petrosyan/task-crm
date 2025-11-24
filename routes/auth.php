@@ -1,13 +1,12 @@
 <?php
 
+use App\Http\Controllers\Api\TicketController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'role:manager|admin'])->prefix('dashboard')->group(function () {
-    Route::get('/', function () {
-        return view('auth.dashboard');
-    })->name('dashboard');
+    Route::get('/', [TicketController::class, 'index'])->name('dashboard');
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');

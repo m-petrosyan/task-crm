@@ -1,6 +1,6 @@
 <x-guest-layout>
-    <div class="max-w-md mx-auto  dark:bg-gray-800 rounded-lg shadow-md p-6">
-        <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Contact Us</h2>
+    <div class="max-w-md mx-auto rounded-lg shadow-md p-6 bg-gray-900 ">
+        <h2 class="text-xl font-semibold mb-4 text-white">Contact Us</h2>
 
         <div id="success-message"
              class="hidden bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-600 text-green-700 dark:text-green-300 px-4 py-3 rounded relative mb-4"
@@ -16,43 +16,43 @@
 
         <form id="ticket-form" class="space-y-4">
             <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                <label for="name" class="block text-sm font-medium text-gray-700 text-white">Name</label>
                 <input type="text" id="name" name="name" required
-                       class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 sm:text-sm">
+                       class="mt-1 block w-full rounded-md  bg-gray-800 text-white shadow-sm focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 sm:text-sm">
             </div>
 
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                <label for="email" class="block text-sm font-medium text-gray-700 text-white">Email</label>
                 <input type="email" id="email" name="email" required
-                       class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 sm:text-sm">
+                       class="mt-1 block w-full rounded-md  bg-gray-800 text-white shadow-sm focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 sm:text-sm">
             </div>
 
             <div>
-                <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Phone</label>
+                <label for="phone" class="block text-sm font-medium text-gray-700 text-white">Phone</label>
                 <input type="tel" id="phone" name="phone" required placeholder="+1234567890"
-                       class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 sm:text-sm">
+                       class="mt-1 block w-full rounded-md  bg-gray-800 text-white shadow-sm focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 sm:text-sm">
             </div>
 
             <div>
-                <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
+                <label for="subject" class="block text-sm font-medium text-gray-700 text-white">Subject</label>
                 <input type="text" id="subject" name="subject" required
-                       class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 sm:text-sm">
+                       class="mt-1 block w-full rounded-md  bg-gray-800 text-white shadow-sm focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 sm:text-sm">
             </div>
 
             <div>
-                <label for="text" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                <label for="text" class="block text-sm font-medium text-gray-700 text-white">Message</label>
                 <textarea id="text" name="text" rows="4" required
-                          class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 sm:text-sm"></textarea>
+                          class="mt-1 block w-full rounded-md  bg-gray-800 text-white shadow-sm focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 sm:text-sm"></textarea>
             </div>
 
             <div>
-                <label for="file" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Attachment</label>
+                <label for="file" class="block text-sm font-medium text-gray-700 text-white">Attachment</label>
                 <input type="file" id="file" name="file"
                        class="mt-1 block w-full text-sm text-gray-500 dark:text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 dark:file:bg-indigo-900 dark:file:text-indigo-300 hover:file:bg-indigo-100 dark:hover:file:bg-indigo-800">
             </div>
 
             <button type="submit" id="submit-btn"
-                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
+                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-gray-800 dark:text-gray-200 bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                 Submit Ticket
             </button>
         </form>
