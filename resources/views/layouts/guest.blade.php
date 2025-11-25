@@ -48,8 +48,11 @@
         @endif
     </header>
 @endif
-<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-800">
-    <div class="w-full  sm:max-w-md mt-6 shadow-md overflow-hidden sm:rounded-lg">
+<div @class([
+    'min-h-screen flex flex-col justify-center items-center',
+    'bg-gray-800' => $auth,
+])>
+    <div class="w-full overflow-hidden sm:rounded-lg flex justify-center items-center">
         {{ $slot }}
     </div>
 </div>

@@ -22,14 +22,14 @@
                 <div class="flex">
 
                     <div class="shrink-0 flex items-center">
-                        <a href="{{ url('/admin/tickets') }}"
+                        <a href="{{ route('dashboard') }}"
                            class="text-xl font-bold text-indigo-400">
                             CRM
                         </a>
                     </div>
 
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <a href="{{ url('/admin/tickets') }}"
+                        <a href="{{ route('dashboard')}}"
                            class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-600 text-sm font-medium leading-5 text-gray-100 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out">
                             Tickets
                         </a>

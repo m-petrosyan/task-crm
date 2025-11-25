@@ -1,3 +1,5 @@
+@php use App\Enums\StatusEnum; @endphp
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -14,12 +16,31 @@
 
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-
+                    @if(session('success'))
+                        <div class="mb-4 p-4 rounded bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <div class="flex justify-between items-start mb-6">
                         <div>
                             <h1 class="text-2xl font-bold mb-2">{{ $ticket->subject }}</h1>
                             <p class="text-gray-500 dark:text-gray-400">
                                 Created {{ $ticket->created_at->format('Y-m-d H:i') }}</p>
+                        </div>
+                        <div class="text-right">
+                            <form action="{{ route('tickets.update', $ticket->id) }}" method="POST">
+                                @method('PUT')
+                                @csrf
+                                <select name="status" onchange="this.form.submit()"
+                                        class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                                    @foreach(StatusEnum::cases() as $status)
+                                        @php $val = $status->value ?? $status->name; @endphp
+                                        <option value="{{ $val }}" {{ $ticket->status == $val ? 'selected' : '' }}>
+                                            {{ ucwords(str_replace('_', ' ', strtolower($val))) }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </form>
                         </div>
                     </div>
 
