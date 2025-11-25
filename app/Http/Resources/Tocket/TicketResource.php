@@ -14,6 +14,10 @@ class TicketResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'day' => $this['day'] ?? null,
+            'week' => $this['week'] ?? null,
+            'month' => $this['month'] ?? null,
+        ];
     }
 }

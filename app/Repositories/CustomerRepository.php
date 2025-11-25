@@ -2,11 +2,12 @@
 
 namespace App\Repositories;
 
+use App\Interfaces\CustomerInterface;
 use App\Models\Customer;
 
-class CustomerRepository
+class CustomerRepository implements CustomerInterface
 {
-    public static function store(array $attributes): Customer
+    public function store(array $attributes): Customer
     {
         return Customer::create($attributes);
     }
