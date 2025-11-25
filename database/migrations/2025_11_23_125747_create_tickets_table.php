@@ -5,8 +5,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -17,7 +16,7 @@ return new class extends Migration
             $table->foreignId('customer_id')->constrained()->cascadeOnDelete();
             $table->string('subject');
             $table->text('text');
-            $table->string('status')->default(StatusEnum::NEW->value);
+            $table->string('status')->default(StatusEnum::NEW->value)->index();
             $table->timestamp('manager_reply_at')->nullable();
             $table->timestamps();
         });
